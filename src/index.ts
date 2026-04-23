@@ -34,7 +34,7 @@ export function redirectPlugin(redirects: Record<string, string>): Plugin {
   let config: ResolvedConfig
 
   return {
-    name: 'vite-plugin-redirect',
+    name: 'vite-plugin-redirects',
 
     configResolved(resolvedConfig) {
       config = resolvedConfig

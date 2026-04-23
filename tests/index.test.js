@@ -13,7 +13,7 @@ function createServerStub() {
   };
 }
 
-describe('vite-plugin-redirect', () => {
+describe('vite-plugin-redirects', () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });
@@ -83,7 +83,7 @@ describe('vite-plugin-redirect', () => {
   });
 
   it('generates redirect pages during closeBundle', () => {
-    const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'vite-plugin-redirect-'));
+    const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'vite-plugin-redirects-'));
     const outDirName = 'dist';
     const outputDir = path.join(rootDir, outDirName);
     const redirects = {
@@ -118,7 +118,7 @@ describe('vite-plugin-redirect', () => {
   });
 
   it('skips generation for temporary output directories', () => {
-    const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'vite-plugin-redirect-'));
+    const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'vite-plugin-redirects-'));
     const outDirName = '.temp/build';
     const outputDir = path.resolve(rootDir, outDirName);
     const plugin = redirectPlugin({ '/foo': '/bar' });

@@ -1,13 +1,13 @@
-# vite-plugin-redirect
+# vite-plugin-redirects
 
-![Vite compatibility](https://registry.vite.dev/api/badges?package=vite-plugin-redirect&tool=vite)
+![Vite compatibility](https://registry.vite.dev/api/badges?package=vite-plugin-redirects&tool=vite)
 
 A lightweight Vite plugin that adds redirect support for dev and preview servers, and generates static HTML redirect pages on build. Compatible with Vite and VitePress.
 
 ## Installation
 
 ```bash
-pnpm i vite-plugin-redirect -D
+pnpm i vite-plugin-redirects -D
 ```
 
 ## Usage with Vite
@@ -15,7 +15,7 @@ pnpm i vite-plugin-redirect -D
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite'
-import { redirectPlugin } from 'vite-plugin-redirect'
+import { redirectPlugin } from 'vite-plugin-redirects'
 
 export default defineConfig({
   plugins: [
@@ -31,7 +31,7 @@ export default defineConfig({
 ```ts
 // config.ts
 import { defineConfig } from 'vitepress'
-import { redirectPlugin } from 'vite-plugin-redirect'
+import { redirectPlugin } from 'vite-plugin-redirects'
 
 export default defineConfig({
   vite: {
