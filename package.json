@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-redirects",
   "description": "A lightweight Vite plugin that adds redirect support for dev and preview servers, and generates static HTML redirect pages on build. Compatible with Vite and VitePress.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "keywords": [
     "vite-plugin",
@@ -11,6 +11,10 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
