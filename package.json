@@ -1,0 +1,43 @@
+{
+  "name": "vite-plugin-redirect",
+  "description": "A lightweight Vite plugin that adds redirect support for dev and preview servers, and generates static HTML redirect pages on build. Compatible with Vite and VitePress.",
+  "version": "0.1.0",
+  "type": "module",
+  "keywords": [
+    "vite-plugin",
+    "redirect"
+  ],
+  "author": "Bugo",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@vitest/coverage-v8": "4.1.5",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "homepage": "https://github.com/dragomano/vite-plugin-redirect",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dragomano/vite-plugin-redirect.git"
+  },
+  "bugs": "https://github.com/dragomano/vite-plugin-redirect/issues",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "pnpm run build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  }
+}
