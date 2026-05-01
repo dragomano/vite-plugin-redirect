@@ -32,12 +32,14 @@ function generateHtml(to: string) {
 
 export function redirectPlugin(redirects: Record<string, string>): Plugin {
   let config: ResolvedConfig
+  let outDir: string
 
   return {
     name: 'vite-plugin-redirects',
 
     configResolved(resolvedConfig) {
       config = resolvedConfig
+      outDir = path.resolve(config.root, config.build.outDir)
     },
 
     configureServer(server) {
@@ -49,9 +51,7 @@ export function redirectPlugin(redirects: Record<string, string>): Plugin {
     },
 
     closeBundle() {
-      const outDir = path.resolve(config.root, config.build.outDir)
-
-      if (outDir.includes('.temp')) return
+      if (config.command === 'serve' || outDir.includes('.temp')) return
 
       for (const [from, to] of Object.entries(redirects)) {
         const dir = path.join(outDir, from)
